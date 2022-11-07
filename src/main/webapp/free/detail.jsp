@@ -28,7 +28,7 @@
 	<div>${free.ip}</div>
 	<div>${free.hit}</div>
 	<div>
-		<form id="frm_edit" action="${contextPath}/free/modify.do">
+		<form id="frm_edit" action="${contextPath}/free/modify.do" method="POST">
 			<div>
 				<label for="title">제목</label>
 				<input type="text" id="title" value="${free.title}">

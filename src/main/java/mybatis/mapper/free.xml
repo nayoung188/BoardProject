@@ -11,7 +11,7 @@
 		ORDER BY FREENO
 	</select>
 
-	<insert id="insertFree" parameterType="int">
+	<insert id="insertFree" parameterType="Free">
 		INSERT INTO FREE
 		 (FREENO, WRITER, TITLE, CONTENT, IP, HIT) 
 		VALUES
