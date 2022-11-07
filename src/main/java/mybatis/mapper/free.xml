@@ -18,10 +18,16 @@
 		 (FREE_SEQ.NEXTVAL, #{writer}, #{title}, #{content}, '127.127.127.0', 5)
 	</insert>
 	
-	<delete id="deleteFree" parameterType="int">
+	<delete id="removeFree" parameterType="int">
 		DELETE
 		  FROM FREE
 		 WHERE FREENO = #{freeNo}
 	</delete>
+	
+	<update id="modifyFree" parameterType="Free">
+	  	UPDATE FREE
+	  	   SET TITLE = #{title}, CONTENT = #{content}
+	  	 WHERE FREENO = #{freeNo}
+	  </update>
 
  </mapper> 

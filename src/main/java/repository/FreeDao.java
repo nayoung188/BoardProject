@@ -47,5 +47,32 @@ public class FreeDao {
 		ss.close();
 		return result;		
 	}
+	
+	public Free selectFreeNo(int freeNo) {
+		SqlSession ss = factory.openSession();
+		Free free = ss.selectOne(mapper + "selectFreeNo", freeNo);
+		ss.close();
+		return free;
+	}
+	
+	public int removeFree(int freeNo) {
+		SqlSession ss = factory.openSession();
+		int result = ss.delete(mapper + "removeFree", freeNo);
+		if(result > 0 ) {
+			ss.commit();
+		}
+		ss.close();
+		return result;
+	}
+	
+	public int modifyFree(Free free) {
+		SqlSession ss = factory.openSession(false);		 
+		int result = ss.update(mapper + "modifyFree", free);
+		if(result > 0) {
+			ss.commit();
+		}
+		ss.close();
+		return result;
+	}
 
 }
